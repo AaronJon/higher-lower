@@ -1,4 +1,4 @@
-# 🔢 NumLock — Real-time PvP Number Guessing Game
+# 🔢 HayaLowa — Real-time Number Guessing Game
 
 A two-player real-time guessing duel built with Flask and Socket.IO. Players secretly pick a number, then take turns guessing each other's — with live feedback, a turn timer, and shared guess history.
 
@@ -32,7 +32,7 @@ A two-player real-time guessing duel built with Flask and Socket.IO. Players sec
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/numlock.git
-cd numlock
+cd hayalowa
 ```
 
 ### 2. Install dependencies
