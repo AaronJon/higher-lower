@@ -87,47 +87,18 @@ function historyPanelHTML() {
         let cls = "h-low", label = "⬆ Too Low";
         if (h.result === "high") { cls = "h-high"; label = "⬇ Too High"; }
         if (h.result === "win")  { cls = "h-win";  label = "✓ HIT!"; }
-        const isMe = h.player === state.player;
+        const who = h.player === state.player ? "You" : "Opponent";
         return `
-          <div class="fade-in" style="
-            display:grid;
-            grid-template-columns:auto 1fr auto;
-            align-items:center;
-            gap:12px;
-            border-left: 3px solid ${isMe ? 'var(--blue)' : 'var(--red)'};
-            background: ${isMe ? 'var(--blue-lt)' : 'var(--red-lt)'};
-            margin: 6px 10px;
-            border-radius: 10px;
-            padding: 10px 14px;
-          ">
+          <div class="h-item fade-in">
             <div>
-              <div style="
-                font-family:'Playfair Display',serif;
-                font-size:26px;font-weight:700;
-                color:${isMe ? 'var(--blue)' : 'var(--red)'};
-                line-height:1
-              ">${h.guess}</div>
-              <div style="
-                font-size:11px;font-weight:600;margin-top:3px;
-                color:${isMe ? 'var(--blue)' : 'var(--red)'};
-                opacity:0.7;letter-spacing:1px;text-transform:uppercase
-              ">${isMe ? '👤 You' : '🎯 Opponent'}</div>
+              <div class="h-num">${h.guess}</div>
+              <div class="h-player">${who} · P${h.player}</div>
             </div>
             <div></div>
             <span class="h-badge ${cls}">${label}</span>
           </div>`;
       }).join("")
     : `<div class="h-empty">No guesses yet</div>`;
-
-  return `
-    <div class="card-flush">
-      <div class="history-header">
-        <span class="section-label">Guess History</span>
-        <span style="font-size:12px;color:var(--ink3)">${state.history.length} guess${state.history.length !== 1 ? "es" : ""}</span>
-      </div>
-      <div class="history-scroll">${rows}</div>
-    </div>`;
-}
 
   return `
     <div class="card-flush">
