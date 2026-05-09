@@ -2,7 +2,7 @@ const socket = io();
 const screenEl  = document.getElementById("screen");
 const navRight  = document.getElementById("navRight");
 
-const TURN_TIME = 20;
+const TURN_TIME = 30;
 
 let state = {
   code:     null,
