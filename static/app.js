@@ -2,7 +2,7 @@ const socket = io();
 const screenEl  = document.getElementById("screen");
 const navRight  = document.getElementById("navRight");
 
-const TURN_TIME = 30;
+const TURN_TIME = 60;
 
 let state = {
   code:     null,
@@ -354,7 +354,7 @@ function showWinner(data) {
           <div class="section-label">${isMe ? "Victory" : "Defeat"}</div>
           <h2 style="font-family:'Playfair Display',serif;font-size:40px;font-weight:900;
             letter-spacing:-1px;margin-top:6px;line-height:1.1">
-            ${isMe ? "You cracked<br><em style='color:var(--blue)'>the code.</em>"
+            ${isMe ? "You Won!<br><em style='color:var(--blue)'>the game.</em>"
                    : "Better luck<br><em style='color:var(--red)'>next time.</em>"}
           </h2>
         </div>
